@@ -36,14 +36,14 @@ func getDefaultPluginSettingsSchema() string {
 	ret, _ := json.Marshal(model.PluginSettingsSchema{
 		Settings: []*model.PluginSetting{
 			{Key: "BasicChannelName", Type: "text"},
-			{Key: "BasicChannelId", Type: "text"},
+			{Key: "BasicChannelID", Type: "text"},
 			{Key: "BasicTeamDisplayName", Type: "text"},
 			{Key: "BasicTeamName", Type: "text"},
-			{Key: "BasicTeamId", Type: "text"},
+			{Key: "BasicTeamID", Type: "text"},
 			{Key: "BasicUserEmail", Type: "text"},
-			{Key: "BasicUserId", Type: "text"},
+			{Key: "BasicUserID", Type: "text"},
 			{Key: "BasicUser2Email", Type: "text"},
-			{Key: "BasicUser2Id", Type: "text"},
+			{Key: "BasicUser2ID", Type: "text"},
 			{Key: "BasicPostMessage", Type: "text"},
 		},
 	})
@@ -54,14 +54,14 @@ func setDefaultPluginConfig(th *TestHelper, pluginId string) {
 	th.App.UpdateConfig(func(cfg *model.Config) {
 		cfg.PluginSettings.Plugins[pluginId] = map[string]interface{}{
 			"BasicChannelName":     th.BasicChannel.Name,
-			"BasicChannelId":       th.BasicChannel.Id,
+			"BasicChannelID":       th.BasicChannel.Id,
 			"BasicTeamName":        th.BasicTeam.Name,
-			"BasicTeamId":          th.BasicTeam.Id,
+			"BasicTeamID":          th.BasicTeam.Id,
 			"BasicTeamDisplayName": th.BasicTeam.DisplayName,
 			"BasicUserEmail":       th.BasicUser.Email,
-			"BasicUserId":          th.BasicUser.Id,
+			"BasicUserID":          th.BasicUser.Id,
 			"BasicUser2Email":      th.BasicUser2.Email,
-			"BasicUser2Id":         th.BasicUser2.Id,
+			"BasicUser2ID":         th.BasicUser2.Id,
 			"BasicPostMessage":     th.BasicPost.Message,
 		}
 	})

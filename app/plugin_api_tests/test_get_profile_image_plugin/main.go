@@ -24,7 +24,7 @@ func (p *MyPlugin) OnConfigurationChange() error {
 func (p *MyPlugin) MessageWillBePosted(c *plugin.Context, post *model.Post) (*model.Post, string) {
 
 	// check existing user first
-	data, err := p.API.GetProfileImage(p.configuration.BasicUserId)
+	data, err := p.API.GetProfileImage(p.configuration.BasicUserID)
 	if err != nil {
 		return nil, err.Error()
 	}

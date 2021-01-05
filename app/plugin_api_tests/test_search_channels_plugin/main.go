@@ -23,7 +23,7 @@ func (p *MyPlugin) OnConfigurationChange() error {
 
 func (p *MyPlugin) MessageWillBePosted(c *plugin.Context, post *model.Post) (*model.Post, string) {
 
-	channels, err := p.API.SearchChannels(p.configuration.BasicTeamId, p.configuration.BasicChannelName)
+	channels, err := p.API.SearchChannels(p.configuration.BasicTeamID, p.configuration.BasicChannelName)
 	if err != nil {
 		return nil, err.Error()
 	}
